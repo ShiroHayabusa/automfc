@@ -9,17 +9,9 @@
 </style>
 
 <body>
-<form style="margin-left: 20px; margin-top: 15px" action="/spotCreate" sec:authorize ="isAuthenticated()">
-  <button class="ui basic button">
-    <i class="plus icon"></i>
-    Добавить спот
-  </button>
-</form>
-
-<div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
 <div class="ui segment">
     <div class="ui six stackable cards" >
-      <div class="ui card" th:each="spot, iter1: ${spots}" th:unless="${iter1.index > 8}">
+      <div class="ui card" th:each="spot: ${spots}">
         <div class="content">
           <div class="right floated meta" th:text="${spot.date}"></div>
           <img class="ui avatar image" th:if="#{spot.user}"
