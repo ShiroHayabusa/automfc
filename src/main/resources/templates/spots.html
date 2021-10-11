@@ -37,7 +37,7 @@
         <div class="mini right floated ui left labeled button" tabindex="0" th:if="${spot.meLiked}" sec:authorize ="!isAuthenticated()">
           <div class="ui basic right pointing label" th:text="${spot.likes}">
           </div>
-          <a class="mini ui icon button" data-content="Только для авторизованных пользователей!">
+          <a class="mini ui icon button" data-content="For authorized users only!">
             <i class="red heart icon"></i>
           </a>
         </div>
@@ -51,7 +51,7 @@
         <div class="mini right floated ui left labeled button" tabindex="0" th:if="${!spot.meLiked}" sec:authorize ="!isAuthenticated()">
           <div class="ui basic right pointing label" th:text="${spot.likes}">
           </div>
-          <a class="mini ui icon button" data-content="Только для авторизованных пользователей!">
+          <a class="mini ui icon button" data-content="For authorized users only!">
             <i class="heart outline icon"></i>
           </a>
         </div>

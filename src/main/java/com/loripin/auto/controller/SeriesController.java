@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -147,9 +148,17 @@ public class SeriesController {
         }
 
         List<Person> pilots = personService.findBySeriesIdOrderByPoints2021Desc(id);
-        List<Team> teams = teamService.findBySeriesIdOrderByPoints2021Desc(id);
         model.addAttribute("pilots", pilots);
+
+        List<Team> teams = new ArrayList<>();
+        List<Team> tmpTeams = teamService.findBySeriesIdOrderByPoints2021Desc(id);
+        for (Team team: tmpTeams) {
+            if (team.getPoints2021() != null) {
+                teams.add(team);
+            }
+        }
         model.addAttribute("teams", teams);
+
         return "seriesOpen";
     }
 

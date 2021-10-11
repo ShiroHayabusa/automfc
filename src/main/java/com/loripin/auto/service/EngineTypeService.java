@@ -1,5 +1,6 @@
 package com.loripin.auto.service;
 
+import com.loripin.auto.model.Country;
 import com.loripin.auto.model.EngineType;
 import com.loripin.auto.repos.EngineTypeRepo;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,12 @@ public class EngineTypeService {
 
     public List<EngineType> findAllByOrderByNameAsc() {
         return engineTypeRepo.findAllByOrderByNameAsc();
+    }
+
+    public EngineType findById(Integer id) {
+        return engineTypeRepo.getOne(id);
+    }
+    public void deleteById(Integer id) {
+        engineTypeRepo.deleteById(id);
     }
 }

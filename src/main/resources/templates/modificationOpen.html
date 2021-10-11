@@ -14,9 +14,9 @@
 </style>
 
 <div style="margin-left:20px" class="ui mini breadcrumb" th:if="${modification.uniq}">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <a class="section" href="/catalog">Каталог</a>
+  <a class="section" href="/catalog">Catalog</a>
   <i class="right angle icon divider"></i>
   <a class="section" th:href="@{/catalog/manufacturer/{id}(id =${modification.bodyType.generation.manufacturer.id})}"
      th:text="${modification.bodyType.generation.manufacturer.name}"></a>
@@ -25,9 +25,9 @@
 </div>
 
 <div style="margin-left:20px" class="ui mini breadcrumb" th:if="${modification.uniq != true}">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <a class="section" href="/catalog">Каталог</a>
+  <a class="section" href="/catalog">Catalog</a>
   <i class="right angle icon divider"></i>
   <a class="section" th:href="@{/catalog/manufacturer/{id}(id =${modification.bodyType.generation.manufacturer.id})}"
      th:text="${modification.bodyType.generation.manufacturer.name}"></a>
@@ -54,16 +54,16 @@
 </h3>
 
 <div style="margin-left:20px; margin-bottom: 10px" class="ui green label"
-     th:if="${modification.electric}">Электромобиль</span>
+     th:if="${modification.electric}">Electric car</span>
 </div>
 <div style="margin-left:20px; margin-bottom: 10px" class="ui blue label"
-     th:if="${modification.hybrid}">Гибрид</span>
+     th:if="${modification.hybrid}">Hybrid</span>
 </div>
 
 <form style="margin-left: 20px" th:action="@{/modificationUpdate/{id}(id=${modification.id})}" sec:authorize ="hasAuthority('ADMIN')">
   <button class="ui basic button">
     <i class="edit icon"></i>
-    Редактировать
+    Edit
   </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
@@ -78,19 +78,19 @@
         <div class="row">
           <div class="five wide column">
             <h4 class="ui header" th:if="${modification.years}">
-              Годы выпуска
+              Production
               <div class="sub header" th:text="${modification.years}"></div>
             </h4>
           </div>
           <div class="five wide column">
             <h4 class="ui header" th:if="${modification.spec}">
-              Спецификация
+              Market
               <div class="sub header" th:if="${modification.spec}" th:text="${modification.spec.name}"></div>
             </h4>
           </div>
           <div class="six wide column">
             <h4 class="ui header" th:if="${modification.amount}">
-              Тираж
+              Amount
               <div class="sub header" th:text="${modification.amount}"></div>
             </h4>
           </div>
@@ -107,12 +107,12 @@
 
 
       <!--   <h4 class="ui header">
-           Титулы
+           Titles
            <div class="sub header">-</div>
          </h4>
          <div class="ui divider"></div>
          <h4 class="ui header">
-           Теги
+           Tags
            <div class="sub header">
              <a class="ui tag label"></a>
              <a class="ui tag label"></a>
@@ -122,7 +122,7 @@
          </h4> !-->
 
       <div class="ui small comments" >
-        <h3 class="ui header">Комментарии</h3>
+        <h3 class="ui header">Comments</h3>
         <div class="comment" th:each="comment: ${comments}">
           <a class="avatar">
             <img th:if="${comment.user}"
@@ -171,7 +171,7 @@
           <div class="field">
             <textarea th:field="*{text}"></textarea>
           </div>
-          <button class="ui button" type="submit">Добавить</button>
+          <button class="ui button" type="submit">Add</button>
           <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         </form>
       </div>
@@ -226,7 +226,7 @@
                   <div class="mini right floated ui left labeled button" tabindex="0" th:if="${spot.meLiked}" sec:authorize ="!isAuthenticated()">
                     <div class="ui basic right pointing label" th:text="${spot.likes}">
                     </div>
-                    <a class="mini ui icon button" data-content="Только для авторизованных пользователей!">
+                    <a class="mini ui icon button" data-content="For authorized users only!">
                       <i class="red heart icon"></i>
                     </a>
                   </div>
@@ -240,7 +240,7 @@
                   <div class="mini right floated ui left labeled button" tabindex="0" th:if="${!spot.meLiked}" sec:authorize ="!isAuthenticated()">
                     <div class="ui basic right pointing label" th:text="${spot.likes}">
                     </div>
-                    <a class="mini ui icon button" data-content="Только для авторизованных пользователей!">
+                    <a class="mini ui icon button" data-content="For authorized users only!">
                       <i class="heart outline icon"></i>
                     </a>
                   </div>
@@ -250,112 +250,112 @@
           </div>
 
           <div style="padding-top:0px" class="ui tab basic segment" data-tab="character">
-            <h4 class="ui header">Двигатель</h4>
+            <h4 class="ui header">Engine</h4>
             <table class="ui small selectable very basic celled table">
               <tbody>
               <tr>
-                <td>Модель</td>
+                <td>Model</td>
                 <td th:if="${modification.engine}">
                   <a th:href="@{/engineOpen/{id}(id=${modification.engine.id})}"
                      th:text="${modification.engine.name}"></a>
                 </td>
               </tr>
               <tr>
-                <td>Тип двигателя</td>
+                <td>Engine type</td>
                 <td th:if="${modification.engineType}" th:text="${modification.engineType.name}"></td>
               </tr>
               <tr>
-                <td>Объем (л)</td>
+                <td>Volume (l)</td>
                 <td th:text="${modification.engineVolume}"></td>
               </tr>
               <tr>
-                <td>Мощность (л.с.)</td>
+                <td>Power (hp)</td>
                 <td th:text="${modification.power}"></td>
               </tr>
               <tr>
-                <td>Крутящий момент (Нм)</td>
+                <td>Torque (N⋅m)</td>
                 <td th:text="${modification.torque}"></td>
               </tr>
               <tr>
-                <td>Топливо</td>
+                <td>Fuel</td>
                 <td th:if="${modification.fuel}" th:text="${modification.fuel.name}"></td>
               </tr>
               </tbody>
             </table>
 
-            <h4 class="ui header">Трансмиссия</h4>
+            <h4 class="ui header">Transmission</h4>
             <table class="ui small selectable very basic celled table">
               <tbody>
               <tr>
-                <td>Модель КПП</td>
+                <td>Transmission</td>
                 <td th:if="${modification.gearBox}" th:text="${modification.gearBox.name}"></td>
               </tr>
               <tr>
-                <td>Тип КПП</td>
+                <td>Transmission type</td>
                 <td th:if="${modification.gearBoxType}" th:text="${modification.gearBoxType.name}"></td>
               </tr>
               <tr>
-                <td>Привод</td>
+                <td>Drive</td>
                 <td th:if="${modification.drive}" th:text="${modification.drive.name}"></td>
               </tr>
               </tbody>
             </table>
 
-            <h4 class="ui header">Кузов</h4>
+            <h4 class="ui header">Body</h4>
             <table class="ui small selectable very basic celled table">
               <tbody>
               <tr>
-                <td>Название</td>
+                <td>Name</td>
                 <td th:if="${modification.body}" th:text="${modification.body.name}"></td>
               </tr>
               <tr>
-                <td>Снаряженная масса (кг)</td>
+                <td>Curb weight (kg)</td>
                 <td th:text="${modification.weight}"></td>
               </tr>
               <tr>
-                <td>Длина (мм)</td>
+                <td>Length (mm)</td>
                 <td th:text="${modification.length}"></td>
               </tr>
               <tr>
-                <td>Ширина (мм)</td>
+                <td>Width (mm)</td>
                 <td th:text="${modification.width}"></td>
               </tr>
               <tr>
-                <td>Высота (мм)</td>
+                <td>Height (mm)</td>
                 <td th:text="${modification.height}"></td>
               </tr>
               <tr>
-                <td>База (мм)</td>
+                <td>Wheelbase (mm)</td>
                 <td th:text="${modification.base}"></td>
               </tr>
               </tbody>
             </table>
 
-            <h4 class="ui header">Динамические характеристики</h4>
+            <h4 class="ui header">Dynamic characteristics</h4>
             <table class="ui small selectable very basic celled table">
               <tbody>
               <tr>
-                <td>Максимальная скорость (км/ч)</td>
+                <td>Maximum speed (km/h)</td>
                 <td th:text="${modification.maxSpeed}"></td>
               </tr>
               <tr>
-                <td>Время разгона до 100 км/ч (с)</td>
+                <td>Acceleration time to 100 km/h (s)</td>
                 <td th:text="${modification.acceleration}"></td>
               </tr>
               </tbody>
             </table>
 
             <h4 class="ui header" th:if="${modification.electric}
-            or ${modification.hybrid}">Электрические характеристики</h4>
+            or ${modification.hybrid}">Electrical specifications</h4>
             <table class="ui small selectable very basic celled table"
                    th:if="${modification.electric} or ${modification.hybrid}">
               <tbody>
               <tr>
-                <td>Емкость батареи (кВт/ч)</td>
+                <td>Battery capacity (kW/h)</td>
                 <td th:text="${modification.battery}"></td>
               </tr>
               <tr>
-                <td>Дальность пробега на одной зарядке (км)</td>
+                <td>Range (km)</td>
                 <td th:text="${modification.range}"></td>
               </tr>
               </tbody>
@@ -369,13 +369,13 @@
         <div class="four wide column">
           <div class="ui vertical fluid right tabular menu">
             <a class="item active" data-tab="photo">
-              Фото
+              Photo
             </a>
             <a class="item" data-tab="spots">
-              Споты
+              Spots
             </a>
             <a class="item" data-tab="character">
-              Характеристики
+              Specifications
             </a>
           </div>
         </div>

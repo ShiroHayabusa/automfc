@@ -1,5 +1,6 @@
 package com.loripin.auto.service;
 
+import com.loripin.auto.model.Country;
 import com.loripin.auto.model.GearBoxType;
 import com.loripin.auto.repos.GearBoxTypeRepo;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,12 @@ public class GearBoxTypeService {
 
     public List<GearBoxType> findAllByOrderByNameAsc() {
         return gearBoxTypeRepo.findAllByOrderByNameAsc();
+    }
+
+    public GearBoxType findById(Long id) {
+        return gearBoxTypeRepo.getOne(id);
+    }
+    public void deleteById(Long id) {
+        gearBoxTypeRepo.deleteById(id);
     }
 }

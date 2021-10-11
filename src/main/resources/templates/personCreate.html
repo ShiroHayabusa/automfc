@@ -8,24 +8,24 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/personList">Список персон</a>
+    <a class="section" href="/personList">Person list</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Добавить персону</div>
+    <div class="active section">Add person</div>
 </div>
 
 <div class="ui raised very padded text container segment">
     <form class="ui form" action="#" th:action="@{/personCreate}" th:object="${person}"
           method="post" enctype="multipart/form-data">
         <div class="field">
-            <label>Имя</label>
-            <input type="text" name="name" placeholder="Имя" th:field="*{name}">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" th:field="*{name}">
         </div>
         <div class="field">
-            <label>Страна</label>
+            <label>Country</label>
             <select class="ui search dropdown" id="country" th:field="*{country}">
                 <option value="0"></option>
                 <option th:each="country : ${countries}"
@@ -35,11 +35,11 @@
             </select>
         </div>
         <div class="field">
-            <label>Дата рождения</label>
-            <input type="text" name="dateOfBirth" placeholder="Дата рождения" th:field="*{dateOfBirth}">
+            <label>Date of Birth</label>
+            <input type="text" name="dateOfBirth" placeholder="Date of Birth" th:field="*{dateOfBirth}">
         </div>
         <div class="field">
-            <label>Серия</label>
+            <label>Series</label>
             <select class="ui search dropdown" id="series" th:field="*{series}">
                 <option value="0"></option>
                 <option th:each="series : ${series}"
@@ -49,7 +49,7 @@
             </select>
         </div>
         <div class="field">
-            <label>Команда</label>
+            <label>Team</label>
             <select class="ui search dropdown" id="team" th:field="*{team}">
                 <option value="0"></option>
                 <option th:each="team : ${teams}"
@@ -59,20 +59,20 @@
             </select>
         </div>
         <div class="field">
-            <label>Описание</label>
-            <textarea type="text" name="description" placeholder="Описание" th:field="*{description}"></textarea>
+            <label>Description</label>
+            <textarea type="text" name="description" placeholder="Description" th:field="*{description}"></textarea>
         </div>
         <div class="field">
             <div class="ui slider checkbox">
                 <input type="checkbox" name="navigator" th:checked="${person.navigator}">
-                <label>Штурман</label>
+                <label>Co-driver</label>
             </div>
         </div>
         <div class="field">
-            <label>Фото</label>
+            <label>Photo</label>
             <input type="file" name="file">
         </div>
-        <button class="ui button" type="submit">Добавить</button>
+        <button class="ui button" type="submit">Add</button>
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>
 </div>

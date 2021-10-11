@@ -5,15 +5,15 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/autosport">Автоспорт</a>
+    <a class="section" href="/autosport">Autosport</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/autosport/{id}(id=${series.id})}" th:text="${series.name}"></a>
     <i class="right angle icon divider"></i>
-    <a class="section" th:href="@{/autosport/calendar/{id}(id=${series.id})}">Календарь</a>
+    <a class="section" th:href="@{/autosport/calendar/{id}(id=${series.id})}">Calendar</a>
     <i class="right angle icon divider"></i>
-    <div class="active section" th:text="${'Результаты' + ' ' + race.name}"></div>
+    <div class="active section" th:text="${race.name + ' results'}"></div>
 </div>
 
 
@@ -27,10 +27,10 @@
 
             <div class="ui top attached tabular menu">
                 <a class="item active" data-tab="results">
-                    Результаты
+                    Results
                 </a>
                 <a class="item" data-tab="qualification" th:if="${series.name != 'WRC'}">
-                    Квалификация
+                    Qualification
                 </a>
             </div>
             <div class="ui bottom attached segment">
@@ -38,26 +38,26 @@
                     <form style="margin-left: 20px" action="/raceResultCreate" sec:authorize ="hasAuthority('ADMIN')">
                         <button class="ui basic button">
                             <i class="plus icon"></i>
-                            Добавить результат
+                            Add results
                         </button>
                     </form>
                     <div class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
                     <table class="ui small very basic table">
                         <thead>
                         <tr>
-                            <th>Позиция</th>
-                            <th>Пилот</th>
-                            <th th:if="${series.name == 'WRC'}">Штурман</th>
-                            <th>Машина</th>
-                            <th>Команда</th>
-                            <th th:if="${series.name == 'WRC'}">Класс</th>
-                            <th>Время</th>
-                            <th th:if="${series.name == 'WRC'}">Отставание</th>
-                            <th th:if="${series.name == 'Formula 1'}">Скорость</th>
-                            <th th:if="${series.name == 'Formula 1'}">Пит-стопы</th>
-                            <th>Сход</th>
+                            <th>Position</th>
+                            <th>Pilot</th>
+                            <th th:if="${series.name == 'WRC'}">Co-driver</th>
+                            <th>Car</th>
+                            <th>Team</th>
+                            <th th:if="${series.name == 'WRC'}">Class</th>
+                            <th>Time</th>
+                            <th th:if="${series.name == 'WRC'}">Gap</th>
+                            <th th:if="${series.name == 'Formula 1'}">Speed</th>
+                            <th th:if="${series.name == 'Formula 1'}">Pit-stops</th>
+                            <th>Out</th>
                             <th>Очки</th>
-                            <th th:if="${series.name == 'WRC'}">Бонус</th>
+                            <th th:if="${series.name == 'WRC'}">Bonus</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -105,20 +105,20 @@
                     <form style="margin-left: 20px" action="/qualificationCreate" sec:authorize ="hasAuthority('ADMIN')">
                         <button class="ui basic button">
                             <i class="plus icon"></i>
-                            Добавить результат квалификации
+                            Add qualification result
                         </button>
                     </form>
                     <div class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
                     <table class="ui small very basic table">
                         <thead>
                         <tr>
-                            <th>Позиция</th>
-                            <th>Пилот</th>
-                            <th>Машина</th>
-                            <th>Команда</th>
-                            <th>Время</th>
-                            <th>Отставание</th>
-                            <th>Круги</th>
+                            <th>Position</th>
+                            <th>Pilot</th>
+                            <th>Car</th>
+                            <th>Team</th>
+                            <th>Time</th>
+                            <th>Gap</th>
+                            <th>Laps</th>
                             <th></th>
                         </tr>
                         </thead>

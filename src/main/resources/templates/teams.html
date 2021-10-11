@@ -5,19 +5,19 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <a class="section" href="/autosport">Автоспорт</a>
+  <a class="section" href="/autosport">Autosport</a>
   <i class="right angle icon divider"></i>
   <a class="section" th:href="@{/autosport/{id}(id=${series.id})}" th:text="${series.name}"></a>
   <i class="right angle icon divider"></i>
-  <div class="active section">Команды</div>
+  <div class="active section">Teams</div>
 </div>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
 <form style="margin-left: 20px" action="/teamCreate" sec:authorize ="hasAuthority('ADMIN')">
   <button class="ui basic button">
     <i class="plus icon"></i>
-    Добавить команду
+    Add team
   </button>
 </form>
 <div class="ui segment">
@@ -27,7 +27,7 @@
     </div>
     <div class="thirteen wide column">
       <h3 class="ui dividing header">
-        Команды
+        Teams
       </h3>
       <div class="ui four column doubling stackable grid container">
         <div class="column">

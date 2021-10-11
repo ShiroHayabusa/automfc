@@ -6,25 +6,25 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список серий</div>
+    <div class="active section">Series list</div>
 </div>
 
 <div class="ui segment">
     <form action="/seriesCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить серию
+            Add series
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Серия</th>
+            <th>Series</th>
             <th></th>
         </tr>
         </thead>
@@ -32,7 +32,7 @@
         <tr>
             <td th:text="${series.id}"></td>
             <td th:text="${series.name}"></td>
-            <td><a th:href="@{seriesUpdate/{id}(id=${series.id})}">Редактировать</a></td>
+            <td><a th:href="@{seriesUpdate/{id}(id=${series.id})}">Edit</a></td>
         </tr>
         </tbody>
     </table>

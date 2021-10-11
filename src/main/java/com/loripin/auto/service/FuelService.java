@@ -1,5 +1,6 @@
 package com.loripin.auto.service;
 
+import com.loripin.auto.model.Country;
 import com.loripin.auto.model.Fuel;
 import com.loripin.auto.repos.FuelRepo;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,12 @@ public class FuelService {
 
     public Fuel save(Fuel fuel) {
         return fuelRepo.save(fuel);
+    }
+
+    public Fuel findById(Integer id) {
+        return fuelRepo.getOne(id);
+    }
+    public void deleteById(Integer id) {
+        fuelRepo.deleteById(id);
     }
 }

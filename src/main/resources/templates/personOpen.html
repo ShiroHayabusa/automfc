@@ -14,13 +14,13 @@
 </style>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/autosport">Автоспорт</a>
+    <a class="section" href="/autosport">Autosport</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/autosport/{id}(id=${person.series.id})}" th:text="${person.series.name}"></a>
     <i class="right angle icon divider"></i>
-    <a class="section" th:href="@{/autosport/persons/{id}(id=${person.series.id})}">Персоны</a>
+    <a class="section" th:href="@{/autosport/persons/{id}(id=${person.series.id})}">Persons</a>
     <i class="right angle icon divider"></i>
     <div class="active section" th:text="${person.name}"></div>
 </div>
@@ -30,7 +30,7 @@
 <form style="margin-left: 20px" th:action="@{/personUpdate/{id}(id=${person.id})}" sec:authorize ="hasAuthority('ADMIN')">
     <button class="ui basic button">
         <i class="edit icon"></i>
-        Редактировать
+        Edit
     </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
@@ -42,20 +42,20 @@
         <img class="ui medium image" th:src="${'/img/' + person.photo}">
     </div>
     <div class="eight wide column">
-        <span>Дата рождения: </span>
+        <span>Date of birth: </span>
         <span th:text="${person.dateOfBirth}"></span>
         <p></p>
-        <span>Страна: </span>
+        <span>Country: </span>
         <span th:if="${person.country}" th:text="${person.country.name}"></span>
         <p></p>
-        <span>Серия: </span>
+        <span>Series: </span>
         <span th:text="${person.series.name}"></span>
         <p></p>
         <span th:text="${person.description}"></span>
     </div>
     <div class="four wide column">
         <h3 style="margin-right: 20px" class="ui dividing header">
-            Команда
+            Team
         </h3>
         <div class="ui card" th:if="${person.team}">
             <a class="image" th:href="@{/teamOpen/{id}(id=${person.team.id})}">

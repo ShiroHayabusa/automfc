@@ -141,12 +141,16 @@ public class GenerationController {
                                  Model model) {
         List<BodyType> restyles0 = bodyTypeService.findByGenerationIdAndRestyleName(id, null);
         model.addAttribute("restyles0", restyles0);
-        List<BodyType> restyles1 = bodyTypeService.findByGenerationIdAndRestyleName(id, "Рестайлинг");
+        List<BodyType> restyles1 = bodyTypeService.findByGenerationIdAndRestyleName(id, "Facelift");
         model.addAttribute("restyles1", restyles1);
-        List<BodyType> restyles2 = bodyTypeService.findByGenerationIdAndRestyleName(id, "2 рестайлинг");
+        List<BodyType> restyles2 = bodyTypeService.findByGenerationIdAndRestyleName(id, "2nd facelift");
         model.addAttribute("restyles2", restyles2);
-        List<BodyType> restyles3 = bodyTypeService.findByGenerationIdAndRestyleName(id, "3 рестайлинг");
+        List<BodyType> restyles3 = bodyTypeService.findByGenerationIdAndRestyleName(id, "3rd facelift");
         model.addAttribute("restyles3", restyles3);
+        List<BodyType> restyles4 = bodyTypeService.findByGenerationIdAndRestyleName(id, "4th facelift");
+        model.addAttribute("restyles4", restyles4);
+        List<BodyType> restyles5 = bodyTypeService.findByGenerationIdAndRestyleName(id, "5th facelift");
+        model.addAttribute("restyles5", restyles5);
         Generation generation = generationService.findById(id);
         model.addAttribute("generation", generation);
         if (user != null) {

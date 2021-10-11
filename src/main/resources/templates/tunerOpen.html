@@ -14,11 +14,11 @@
 </style>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/tunerList">Список тюнеров</a>
+    <a class="section" href="/tunerList">Tuner list</a>
     <i class="right angle icon divider"></i>
     <div class="active section" th:text="${tuner.name}"></div>
 </div>
@@ -28,7 +28,7 @@
 <form style="margin-left: 20px" th:action="@{/tunerUpdate/{id}(id=${tuner.id})}" sec:authorize ="hasAuthority('ADMIN')">
     <button class="ui basic button">
         <i class="edit icon"></i>
-        Редактировать
+        Edit
     </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
@@ -40,7 +40,7 @@
         <img class="ui medium image" th:src="${'/img/' + tuner.logo}">
     </div>
     <div class="eight wide column">
-        <span>Страна: </span>
+        <span>Country: </span>
         <span th:text="${tuner.country.name}"></span>
         <p></p>
         <span th:text="${tuner.description}"></span>

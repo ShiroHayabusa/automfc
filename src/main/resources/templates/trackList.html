@@ -6,28 +6,30 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список трасс</div>
+    <div class="active section">Track list</div>
 </div>
 
 <div class="ui segment">
     <form action="/trackCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить трассу
+            Add track
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Трасса</th>
-            <th>Страна</th>
-            <th>Город</th>
-            <th>Год постройки</th>
+            <th>Track</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Year built</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody th:each="track: ${tracks}">
@@ -37,6 +39,12 @@
             <td th:text="${track.country.name}"></td>
             <td th:text="${track.city}"></td>
             <td th:text="${track.yearOfConstruction}"></td>
+            <td>
+                <a th:href="@{/trackUpdate/{id}(id=${track.id})}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{/trackDelete/{id}(id=${track.id})}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>

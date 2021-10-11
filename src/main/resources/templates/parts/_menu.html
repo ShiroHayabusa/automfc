@@ -10,42 +10,42 @@
         </h4>
     </div>
     <a class="item" href="/">
-        Главная
+        Home
     </a>
     <!--    <a class="item">
             Статьи
         </a> !-->
     <a class="item" href="/catalog">
         <i class="car icon"></i>
-        Каталог
+        Catalog
     </a>
     <a class="item" href="/autosport">
-        Автоспорт
+        Autosport
     </a>
     <a class="item" href="/spots">
-        Споты
+        Spots
     </a>
     <!--<a class="item">
-        Ивенты
+        Events
     </a> !-->
     <div class="right menu">
         <a class="item" href="/user/profile" sec:authorize ="hasAuthority('USER')">
             <i class="user icon"></i>
-            Профиль
+            Profile
         </a>
         <a class="item" href="/adminPage" sec:authorize ="hasAuthority('ADMIN')">
             <i class="cogs icon"></i>
-            Администрирование
+            Administration
         </a>
         <!--         <div class="item">
                   <form class="ui form" action="#" th:action="@{/}" th:object="${article}" method="get">
                       <div class="ui search">
-                          <input class="prompt" type="text" name="filter" placeholder="Поиск..." th:value="${filter}">
+                          <input class="prompt" type="text" name="filter" placeholder="Search..." th:value="${filter}">
                       </div>
                   </form>
               </div>
               <div class="ui dropdown item">
-                  Язык <i class="dropdown icon"></i>
+                  Language <i class="dropdown icon"></i>
                   <div class="menu">
                       <a class="item">English</a>
                       <a class="item">Russian</a>
@@ -57,7 +57,7 @@
             <form action="/login">
                 <button class="ui inverted button" type="submit">
                     <i class="sign in alternate icon"></i>
-                    Войти
+                    Sign in
                 </button>
             </form>
         </div>
@@ -66,7 +66,7 @@
             <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
                 <button class="ui inverted button" type="submit">
                     <i class="sign out alternate icon"></i>
-                    Выйти
+                    Log out
                 </button>
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
             </form>

@@ -8,13 +8,13 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/specList">Список спецификаций</a>
+    <a class="section" href="/specList">Market list</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Редактировать спецификацию</div>
+    <div class="active section">Edit market</div>
 </div>
 
 <div class="ui raised very padded text container segment">
@@ -24,11 +24,11 @@
             <input readonly type="hidden" th:field="*{id}" id="id" placeholder="ID">
         </div>
         <div class="field">
-            <label>Марка</label>
-            <input type="text" name="name" placeholder="Название" th:field="*{name}">
+            <label>Brand</label>
+            <input type="text" name="name" placeholder="Brand" th:field="*{name}">
         </div>
         <div class="field">
-            <label>Страна</label>
+            <label>Country</label>
             <select class="ui search dropdown" id="country" th:field="*{country}">
                 <option value="0"></option>
                 <option th:each="country : ${countries}"
@@ -37,7 +37,7 @@
                 </option>
             </select>
         </div>
-        <button class="ui button" type="submit">Сохранить</button>
+        <button class="ui button" type="submit">Save</button>
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>
 </div>

@@ -8,9 +8,9 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/catalog">Каталог</a>
+    <a class="section" href="/catalog">Catalog</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/catalog/manufacturer/{id}(id =${generation.manufacturer.id})}"
        th:text="${generation.manufacturer.name}"></a>
@@ -21,17 +21,17 @@
     <a class="section" th:href="@{/catalog/manufacturer/carmodel/generation/{id}(id = ${generation.id})}"
        th:text="${generation.name}"></a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Добавить рестайлинг</div>
+    <div class="active section">Add facelift</div>
 </div>
 
 <div class="ui raised very padded text container segment">
     <form class="ui form" action="#" th:action="@{/restyleCreate}" th:object="${restyle}"
           method="post" enctype="multipart/form-data">
         <div class="field">
-            <label>Рестайлинг</label>
+            <label>Facelift</label>
             <input type="text" name="name" placeholder="Рестайлинг" th:field="*{name}">
         </div>
-        <button class="ui button" type="submit">Добавить</button>
+        <button class="ui button" type="submit">Add</button>
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>
 </div>

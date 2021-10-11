@@ -14,13 +14,13 @@
 </style>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/autosport">Автоспорт</a>
+    <a class="section" href="/autosport">Autosport</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/autosport/{id}(id=${team.series.id})}" th:text="${team.series.name}"></a>
     <i class="right angle icon divider"></i>
-    <a class="section" th:href="@{/autosport/teams/{id}(id=${team.series.id})}">Команды</a>
+    <a class="section" th:href="@{/autosport/teams/{id}(id=${team.series.id})}">Teams</a>
     <i class="right angle icon divider"></i>
     <div class="active section" th:text="${team.name}"></div>
 </div>
@@ -30,7 +30,7 @@
 <form style="margin-left: 20px" th:action="@{/teamUpdate/{id}(id=${team.id})}" sec:authorize ="hasAuthority('ADMIN')">
     <button class="ui basic button">
         <i class="edit icon"></i>
-        Редактировать
+        Edit
     </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
@@ -42,18 +42,18 @@
         <img class="ui medium image" th:if="${team.logo}" th:src="${'/img/' + team.logo}">
     </div>
     <div class="nine wide column">
-        <span>Год основания: </span>
+        <span>Year of foundation: </span>
         <span th:text="${team.yearOfFoundation}"></span>
         <p></p>
-        <span>Страна: </span>
+        <span>Country: </span>
         <span th:if="${team.country}" th:text="${team.country.name}"></span>
         <p></p>
-        <span>Серия: </span>
+        <span>Series: </span>
         <span th:text="${team.series.name}"></span>
         <p></p>
         <span th:text="${team.description}"></span>
         <h3 class="ui dividing header">
-            Пилоты
+            Pilots
         </h3>
         <div class="ui five stackable cards">
             <div class="card" th:each="pilot: ${pilots}">
@@ -66,7 +66,7 @@
             </div>
         </div>
         <h3 class="ui dividing header" th:if="${team.series.name == 'WRC'}">
-            Штурманы
+            Co-drivers
         </h3>
         <div class="ui five stackable cards" th:if="${team.series.name == 'WRC'}">
             <div class="card" th:each="navigator: ${navigators}">

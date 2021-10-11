@@ -5,13 +5,13 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/autosport">Автоспорт</a>
+    <a class="section" href="/autosport">Autosport</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/autosport/{id}(id=${series.id})}" th:text="${series.name}"></a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Архив</div>
+    <div class="active section">Archive</div>
 </div>
 
 <div class="ui segment">
@@ -21,7 +21,7 @@
         </div>
         <div class="thirteen wide column">
             <h3 class="ui dividing header">
-                Архив
+                Archive
             </h3>
             <div class="ui ten column doubling stackable grid container">
                 <div class="column">

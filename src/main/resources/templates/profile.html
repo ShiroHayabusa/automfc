@@ -10,12 +10,12 @@
     <form class="ui form" method="post" enctype="multipart/form-data">
         <img class="ui small centered circular image" th:src="@{'/img/' + ${user.avatar}}" alt="">
         <div class="field">
-            <label>Изменить аватар</label>
+            <label>Change avatar</label>
             <input type="file" name="file">
         </div>
         <div class="field">
-            <label>Пароль</label>
-            <input type="password" name="password" placeholder="Пароль"/>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password"/>
         </div>
 
         <div class="field">
@@ -23,7 +23,7 @@
             <input type="email" name="email" placeholder="mail@mail.com" th:value="${user.email}"/>
         </div>
 
-        <button class="ui button" type="submit" style="margin-top: 20px">Сохранить</button>
+        <button class="ui button" type="submit" style="margin-top: 20px">Save</button>
 
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>

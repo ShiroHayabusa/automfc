@@ -15,7 +15,7 @@
 
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
     <div class="active section" th:text="${article.heading}"></div>
 </div>
@@ -27,11 +27,11 @@
               sec:authorize ="hasAuthority('ADMIN')">
             <button class="ui basic button">
                 <i class="edit icon"></i>
-                Редактировать
+                Edit
             </button>
         </form>
         <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
-        <p th:text="'Дата: ' + ${article.date}"></p>
+        <p th:text="'Date: ' + ${article.date}"></p>
 
 
         <img class="ui left merged large image" th:src="@{'/img/' + ${article.modification.photo}}">
@@ -39,7 +39,7 @@
         <p th:text="${article.text}"></p>
 
         <div class="ui divider"></div>
-        <div class="ui small header"><p>Фото</p>
+        <div class="ui small header"><p>Photo</p>
             <div class="block ui small images " th:each="ph: ${photos}">
                 <div>
                     <a th:href="${'/img/' + ph}" data-fancybox="gallery">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="ui comments" >
-            <h3 class="ui dividing header">Комментарии</h3>
+            <h3 class="ui dividing header">Comments</h3>
             <div class="comment" th:each="comment: ${comments}">
                 <a class="avatar">
                     <img th:src="@{'/img/' + ${comment.user.avatar}}">

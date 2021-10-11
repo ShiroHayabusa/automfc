@@ -6,23 +6,23 @@
 
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="#">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Регистрация</div>
+    <div class="active section">Sign up</div>
 </div>
 
 <div class="ui raised very padded text container segment">
-    <h2>Регистрация</h2>
+    <h2>Sign up</h2>
     <form class="ui form" th:action="@{/registration}" method="post" enctype="multipart/form-data">
         <div th:text="${message}"></div>
 
         <div class="field">
-            <label>Имя пользователя</label>
-            <input type="text" name="username" placeholder="Имя пользователя">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username">
         </div>
         <div class="ui form error">
             <div style="margin-bottom:10px" class="ui error message" th:if="${usernameError}" >
-                <div class="header">Ошибка!</div>
+                <div class="header">Error!</div>
                 <p th:text="${usernameError}"></p>
             </div>
         </div>
@@ -33,25 +33,25 @@
         </div>
         <div class="ui form error">
             <div style="margin-bottom:10px" class="ui error message" th:if="${emailError}">
-                <div class="header">Ошибка!</div>
+                <div class="header">Error!</div>
                 <p th:text="${emailError}"></p>
             </div>
         </div>
 
         <div class="field">
-            <label>Пароль</label>
-            <input type="password" name="password" placeholder="Пароль"/>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password"/>
         </div>
         <div class="ui form error">
             <div style="margin-bottom:10px" class="ui error message" th:if="${passwordError}">
-                <div class="header">Ошибка!</div>
+                <div class="header">Error!</div>
                 <p th:text="${passwordError}"></p>
             </div>
         </div>
 
         <div class="field">
-            <label>Подтверждение пароля</label>
-            <input type="password" name="password2" placeholder="Пароль"/>
+            <label>Confirm password</label>
+            <input type="password" name="password2" placeholder="Password"/>
         </div>
         <div class="ui form error">
             <div style="margin-bottom:10px" class="ui error message" th:if="${password2Error}">
@@ -61,7 +61,7 @@
         </div>
 
         <div class="field">
-            <label>Аватар</label>
+            <label>Avatar</label>
             <input type="file" name="file">
         </div>
 
@@ -70,12 +70,12 @@
                 <div class="g-recaptcha" data-sitekey="6LeB7tcZAAAAAIN1wkuNTm4ef__BOB55heEdAWqT"></div>
             </div>
             <div style="margin-bottom: 10px" class="ui error message" th:if="${captchaError} ">
-                <div class="header">Ошибка!</div>
+                <div class="header">Error!</div>
                 <p th:text="${captchaError}"></p>
             </div>
         </div>
 
-        <button class="ui button" type="submit" style="margin-top: 20px">Создать</button>
+        <button class="ui button" type="submit" style="margin-top: 20px">Create your account</button>
 
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>

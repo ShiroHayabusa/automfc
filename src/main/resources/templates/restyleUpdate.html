@@ -8,9 +8,9 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/catalog">Каталог</a>
+    <a class="section" href="/catalog">Catalog</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/catalog/manufacturer/{id}(id = ${bodyType.generation.manufacturer.id})}"
        th:text="${bodyType.generation.manufacturer.name}"></a>
@@ -28,7 +28,7 @@
     <a class="section" th:href="@{/catalog/manufacturer/carmodel/generation/restyle/{id}(id = ${bodyType.id})}"
          th:text="${bodyType.bodyTypeName.name}"></a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Редактировать</div>
+    <div class="active section">Edit</div>
 </div>
 
 <div class="ui raised very padded text container segment">
@@ -44,7 +44,7 @@
             <input readonly type="hidden" th:field="*{restyle}" id="restyle">
         </div>
         <div class="field">
-            <label>Тип кузова</label>
+            <label>Body type</label>
             <select class="ui search dropdown" id="bodyTypeName" th:field="*{bodyTypeName}">
                 <option value="0"></option>
                 <option th:each="bodyTypeName : ${bodyTypeNames}"
@@ -54,11 +54,11 @@
             </select>
         </div>
         <div class="field">
-            <label>Годы выпуска</label>
-            <input type="text" th:field="*{years}" id="years" placeholder="Годы выпуска">
+            <label>Production</label>
+            <input type="text" th:field="*{years}" id="years" placeholder="Production">
         </div>
         <div class="field">
-            <label>Спецификация</label>
+            <label>Market</label>
             <select class="ui search dropdown" id="spec" th:field="*{spec}">
                 <option value="0"></option>
                 <option th:each="spec : ${specs}"
@@ -68,8 +68,8 @@
             </select>
         </div>
         <div class="field">
-            <label>Описание</label>
-            <textarea type="text" th:field="*{description}" id="description" placeholder="Описание"></textarea>
+            <label>Description</label>
+            <textarea type="text" th:field="*{description}" id="description" placeholder="Description"></textarea>
         </div>
         <label>Фото</label>
         <div class="field">

@@ -6,26 +6,26 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список классов</div>
+    <div class="active section">Class list</div>
 </div>
 
 <div class="ui segment">
     <form action="/raceClassCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить класс
+            Add class
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Название</th>
-            <th>Серия</th>
+            <th>Name</th>
+            <th>Series</th>
         </tr>
         </thead>
         <tbody th:each="raceClass: ${raceClasses}">

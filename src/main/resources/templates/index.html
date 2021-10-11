@@ -9,14 +9,14 @@
 </style>
 
 <body>
-<form style="margin-left: 20px; margin-top: 15px" action="/spotCreate" sec:authorize ="isAuthenticated()">
+<!-- <form style="margin-left: 20px; margin-top: 15px" action="/spotCreate" sec:authorize ="isAuthenticated()">
   <button class="ui basic button">
     <i class="plus icon"></i>
     Добавить спот
   </button>
 </form>
 
-<div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
+<div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>!-->
 <div class="ui internally celled grid">
   <div class="ten wide column">
     <div class="ui three cards" >
@@ -44,7 +44,7 @@
           <div class="mini right floated ui left labeled button" tabindex="0" th:if="${spot.meLiked}" sec:authorize ="!isAuthenticated()">
             <div class="ui basic right pointing label" th:text="${spot.likes}">
             </div>
-            <a class="mini ui icon button" data-content="Только для авторизованных пользователей!">
+            <a class="mini ui icon button" data-content="For authorized users only!">
               <i class="red heart icon"></i>
             </a>
           </div>
@@ -58,7 +58,7 @@
           <div class="mini right floated ui left labeled button" tabindex="0" th:if="${!spot.meLiked}" sec:authorize ="!isAuthenticated()">
             <div class="ui basic right pointing label" th:text="${spot.likes}">
             </div>
-            <a class="mini ui icon button" data-content="Только для авторизованных пользователей!">
+            <a class="mini ui icon button" data-content="For authorized users only!">
               <i class="heart outline icon"></i>
             </a>
           </div>
@@ -80,8 +80,8 @@
       <h2 class="ui header">
         <i class="plus circle icon"></i>
         <div class="content">
-          Последние
-          <div class="sub header">добавленные автомобили</div>
+          Last
+          <div class="sub header">added cars</div>
         </div>
       </h2>
       <div class="ui divided items">
@@ -116,40 +116,40 @@
       <h2 class="ui header">
         <i class="database icon"></i>
         <div class="content">
-          Статистика
-          <div class="sub header">базы данных сайта:</div>
+          Database
+          <div class="sub header">statistics</div>
         </div>
       </h2>
       <div class="ui horizontal statistics">
         <div class="statistic">
           <div class="value" th:text="${spots.size()}"></div>
           <div class="label">
-            спотов
+            spots
           </div>
         </div>
         <div class="statistic">
           <div class="value" th:text="${modifications.size()}"></div>
           <div class="label">
-            автомобилей
+            cars
           </div>
         </div>
         <div class="statistic">
           <div class="value" th:text="${manufacturers.size()}"></div>
           <div class="label">
-            производителей
+            brands
           </div>
         </div>
         <div class="statistic">
           <div class="value" th:text="${carmodels.size()}"></div>
           <div class="label">
-            моделей
+            models
           </div>
         </div>
 
         <div class="statistic">
           <div class="value" th:text="${photoCount}"></div>
           <div class="label">
-            фотографий
+            photos
           </div>
         </div>
       </div>

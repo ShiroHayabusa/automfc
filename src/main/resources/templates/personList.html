@@ -6,18 +6,18 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список персон</div>
+    <div class="active section">Person list</div>
 </div>
 
 <div class="ui segment">
     <form action="/personCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить персону
+            Add person
         </button>
     </form>
     <table class="ui striped table">
@@ -25,10 +25,10 @@
         <tr>
             <th>id</th>
             <th></th>
-            <th>Имя</th>
-            <th>Страна</th>
-            <th>Дата рождения</th>
-            <th>Серия</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Date of birth</th>
+            <th>Series</th>
             <th></th>
         </tr>
         </thead>
@@ -44,7 +44,7 @@
             <td th:if="${person.series != null}" th:text="${person.series.name}"></td>
             <td >
                 <a th:href="@{/personUpdate/{id}(id=${person.id})}">
-                    Редактировать
+                    Edit
                 </a>
             </td>
         </tr>

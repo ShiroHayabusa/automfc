@@ -5,9 +5,9 @@
 <div th:insert="parts/_menu :: menu"></div>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <a class="section" href="/catalog">Каталог</a>
+  <a class="section" href="/catalog">Catalog</a>
   <i class="right angle icon divider"></i>
   <div class="active section" th:text="${manufacturer.getName()}"></div>
 </div>
@@ -30,7 +30,7 @@
                 sec:authorize ="hasAuthority('ADMIN')">
             <button class="ui basic button">
               <i class="edit icon"></i>
-              Редактировать
+              Edit
             </button>
           </form>
           <span class="stay"></span>
@@ -47,7 +47,7 @@
 <form style="margin-left: 20px" action="/carmodelCreate" sec:authorize ="hasAuthority('ADMIN')">
   <button class="ui basic button">
     <i class="plus icon"></i>
-    Добавить модель
+    Add model
   </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>

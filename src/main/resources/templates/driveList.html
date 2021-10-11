@@ -6,31 +6,39 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список приводов</div>
+    <div class="active section">Drive list</div>
 </div>
 
 <div class="ui segment">
     <form action="/driveCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить привод
+            Add drive
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Привод</th>
+            <th>Drive</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody th:each="drive: ${drives}">
         <tr>
             <td th:text="${drive.id}"></td>
             <td th:text="${drive.name}"></td>
+            <td>
+                <a th:href="@{/driveUpdate/{id}(id=${drive.id})}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{/driveDelete/{id}(id=${drive.id})}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>

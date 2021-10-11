@@ -8,17 +8,17 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/autosport">Автоспорт</a>
+    <a class="section" href="/autosport">Autosport</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/autosport/{id}(id=${team.series.id})}" th:text="${team.series.name}"></a>
     <i class="right angle icon divider"></i>
-    <a class="section" th:href="@{/autosport/teams/{id}(id=${team.series.id})}">Команды</a>
+    <a class="section" th:href="@{/autosport/teams/{id}(id=${team.series.id})}">Teams</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/teamOpen/{id}(id=${team.id})}" th:text="${team.name}"></a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Редактировать команду</div>
+    <div class="active section">Edit team</div>
 </div>
 
 <div class="ui raised very padded text container segment">
@@ -29,11 +29,11 @@
             <input readonly type="hidden" th:field="*{id}" id="id" placeholder="ID">
         </div>
         <div class="field">
-            <label>Название</label>
-            <input type="text" name="name" placeholder="Имя" th:field="*{name}">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" th:field="*{name}">
         </div>
         <div class="field">
-            <label>Страна</label>
+            <label>Country</label>
             <select class="ui search dropdown" id="country" th:field="*{country}">
                 <option value="0"></option>
                 <option th:each="country : ${countries}"
@@ -43,11 +43,11 @@
             </select>
         </div>
         <div class="field">
-            <label>Год основания</label>
-            <input type="text" name="yearOfFoundation" placeholder="Год основания" th:field="*{yearOfFoundation}">
+            <label>Year of foundation</label>
+            <input type="text" name="yearOfFoundation" placeholder="Year of foundation" th:field="*{yearOfFoundation}">
         </div>
         <div class="field">
-            <label>Серия</label>
+            <label>Series</label>
             <select class="ui search dropdown" id="series" th:field="*{series}">
                 <option value="0"></option>
                 <option th:each="series : ${series}"
@@ -57,18 +57,18 @@
             </select>
         </div>
         <div class="field">
-            <label>Описание</label>
-            <textarea type="text" name="description" placeholder="Описание" th:field="*{description}"></textarea>
+            <label>Description</label>
+            <textarea type="text" name="description" placeholder="Description" th:field="*{description}"></textarea>
         </div>
         <div class="field">
-            <label>Очки сезон 2021</label>
-            <input type="text" name="description" placeholder="Описание" th:field="*{points2021}">
+            <label>2021 season points </label>
+            <input type="text" name="description" placeholder="2021 season points" th:field="*{points2021}">
         </div>
         <div class="field">
-            <label>Логотип</label>
+            <label>Logo</label>
             <input type="file" name="file">
         </div>
-        <button class="ui button" type="submit">Сохранить</button>
+        <button class="ui button" type="submit">Save</button>
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>
 </div>

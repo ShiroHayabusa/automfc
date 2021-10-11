@@ -8,9 +8,9 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/catalog">Каталог</a>
+    <a class="section" href="/catalog">Catalog</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/catalog/manufacturer/{id}(id =${modification.bodyType.generation.manufacturer.id})}"
        th:text="${modification.bodyType.generation.manufacturer.name}"></a>
@@ -30,13 +30,13 @@
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/catalog/manufacturer/carmodel/generation/restyle/modification/{id}(id = ${modification.id})}" th:text="${modification.name}"></a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Редактировать модификацию</div>
+    <div class="active section">Edit car</div>
 </div>
 
 <div style="margin-bottom: 20px" class="ui container">
     <form class="ui form" th:action="@{/modificationUpdate}" th:object="${modification}" method="post"
           enctype="multipart/form-data">
-        <h4 class="ui dividing header">Общая информация</h4>
+        <h4 class="ui dividing header">General information</h4>
         <div class="field">
             <input readonly type="hidden" th:field="*{id}" id="id" placeholder="ID">
         </div>
@@ -46,19 +46,19 @@
         <div class="field">
             <div class="fields">
                 <div class="four wide field">
-                    <label>Модификация</label>
-                    <input type="text" th:field="*{name}" id="heading" placeholder="Модификация">
+                    <label>Car</label>
+                    <input type="text" th:field="*{name}" id="heading" placeholder="Car">
                 </div>
                 <div class="four wide field">
-                    <label>Годы выпуска</label>
-                    <input type="text" th:field="*{years}" id="years" placeholder="Годы выпуска">
+                    <label>Production</label>
+                    <input type="text" th:field="*{years}" id="years" placeholder="Production">
                 </div>
                 <div class="four wide field">
-                    <label>Тираж</label>
-                    <input type="text" th:field="*{amount}" id="amount" placeholder="Тираж">
+                    <label>Amount</label>
+                    <input type="text" th:field="*{amount}" id="amount" placeholder="Amount">
                 </div>
                 <div class="four wide field">
-                    <label>Спецификация</label>
+                    <label>Market</label>
                     <select class="ui search dropdown" id="spec" th:field="*{spec}">
                         <option value="0"></option>
                         <option th:each="spec : ${specs}"
@@ -70,14 +70,14 @@
             </div>
         </div>
         <div class="field">
-            <label>Описание</label>
-            <textarea type="text" th:field="*{description}" id="description" placeholder="Описание"></textarea>
+            <label>Description</label>
+            <textarea type="text" th:field="*{description}" id="description" placeholder="Description"></textarea>
         </div>
-        <h4 class="ui dividing header">Двигатель</h4>
+        <h4 class="ui dividing header">Engine</h4>
         <div class="field">
             <div class="fields">
                 <div class="five wide field">
-                    <label>Модель двигателя</label>
+                    <label>Engine model</label>
                     <select class="ui search dropdown" id="engine" th:field="*{engine}">
                         <option value="0"></option>
                         <option th:each="engine : ${engines}"
@@ -87,18 +87,18 @@
                     </select>
                 </div>
                 <div class="five wide field">
-                    <label>Мощность</label>
-                    <input type="text" th:field="*{power}" id="power" placeholder="Мощность">
+                    <label>Power</label>
+                    <input type="text" th:field="*{power}" id="power" placeholder="Power">
                 </div>
                 <div class="six wide field">
-                    <label>Крутящий момент</label>
-                    <input type="text" th:field="*{torque}" id="torque" placeholder="Крутящий момент">
+                    <label>Torque</label>
+                    <input type="text" th:field="*{torque}" id="torque" placeholder="Torque">
                 </div>
 
             </div>
             <div class="fields">
                 <div class="five wide field">
-                    <label>Тип двигателя</label>
+                    <label>Engine type</label>
                     <select class="ui search dropdown" id="engineType" th:field="*{engineType}">
                         <option value="0"></option>
                         <option th:each="engineType : ${engineTypes}"
@@ -108,11 +108,11 @@
                     </select>
                 </div>
                 <div class="five wide field">
-                    <label>Объем</label>
-                    <input type="text" th:field="*{engineVolume}" id="engineVolume" placeholder="Объем">
+                    <label>Volume</label>
+                    <input type="text" th:field="*{engineVolume}" id="engineVolume" placeholder="Volume">
                 </div>
                 <div class="six wide field">
-                    <label>Топливо</label>
+                    <label>Fuel</label>
                     <select class="ui search dropdown" id="fuel" th:field="*{fuel}">
                         <option value="0"></option>
                         <option th:each="fuel : ${fuels}"
@@ -123,11 +123,11 @@
                 </div>
             </div>
         </div>
-        <h4 class="ui dividing header">Трансмиссия</h4>
+        <h4 class="ui dividing header">Transmission</h4>
         <div class="field">
             <div class="fields">
                 <div class="five wide field">
-                    <label>КПП</label>
+                    <label>Transmission</label>
                     <select class="ui search dropdown" id="gearBox" th:field="*{gearBox}">
                         <option value="0"></option>
                         <option th:each="gearBox : ${gearBoxes}"
@@ -137,7 +137,7 @@
                     </select>
                 </div>
                 <div class="five wide field">
-                    <label>Тип КПП</label>
+                    <label>Transmission type</label>
                     <select class="ui search dropdown" id="gearBoxType" th:field="*{gearBoxType}">
                         <option value="0"></option>
                         <option th:each="gearBoxType : ${gearBoxTypes}"
@@ -147,7 +147,7 @@
                     </select>
                 </div>
                 <div class="six wide field">
-                    <label>Привод</label>
+                    <label>Drive</label>
                     <select class="ui search dropdown" id="drive" th:field="*{drive}">
                         <option value="0"></option>
                         <option th:each="drive : ${drives}"
@@ -158,11 +158,11 @@
                 </div>
             </div>
         </div>
-        <h4 class="ui dividing header">Кузов</h4>
+        <h4 class="ui dividing header">Body</h4>
         <div class="field">
             <div class="two fields">
                 <div class="field">
-                    <label>Модель кузова</label>
+                    <label>Body model</label>
                     <select class="ui search dropdown" id="body" th:field="*{body}">
                         <option value="0"></option>
                         <option th:each="body : ${bodies}"
@@ -172,57 +172,57 @@
                     </select>
                 </div>
                 <div class="field">
-                    <label>Снаряженная масса</label>
-                    <input type="text" th:field="*{weight}" id="weight" placeholder="Снаряженная масса">
+                    <label>Curb weight</label>
+                    <input type="text" th:field="*{weight}" id="weight" placeholder="Curb weight">
                 </div>
             </div>
             <div class="fields">
                 <div class="four wide field">
-                    <label>Длина</label>
-                    <input type="text" th:field="*{length}" id="length" placeholder="Длина">
+                    <label>Length</label>
+                    <input type="text" th:field="*{length}" id="length" placeholder="Length">
                 </div>
                 <div class="four wide field">
-                    <label>Ширина</label>
-                    <input type="text" th:field="*{width}" id="width" placeholder="Ширина">
+                    <label>Width</label>
+                    <input type="text" th:field="*{width}" id="width" placeholder="Width">
                 </div>
                 <div class="four wide field">
-                    <label>Высота</label>
-                    <input type="text" th:field="*{height}" id="height" placeholder="Высота">
+                    <label>Height</label>
+                    <input type="text" th:field="*{height}" id="height" placeholder="Height">
                 </div>
                 <div class="four wide field">
-                    <label>База</label>
-                    <input type="text" th:field="*{base}" id="base" placeholder="База">
+                    <label>Wheelbase</label>
+                    <input type="text" th:field="*{base}" id="base" placeholder="Wheelbase">
                 </div>
             </div>
         </div>
-        <h4 class="ui dividing header">Динамические характеристики</h4>
+        <h4 class="ui dividing header">Dynamic characteristics</h4>
         <div class="two fields">
             <div class="field">
-                <label>Максимальная скорость</label>
-                <input type="text" name="maxSpeed" placeholder="Максимальная скорость" th:field="*{maxSpeed}">
+                <label>Maximum speed</label>
+                <input type="text" name="maxSpeed" placeholder="Maximum speed" th:field="*{maxSpeed}">
             </div>
             <div class="field">
-                <label>Время разгона до 100 км/ч</label>
-                <input type="text" name="acceleration" placeholder="Время разгона до 100 км/ч" th:field="*{acceleration}">
-            </div>
-        </div>
-
-        <h4 class="ui dividing header">Электрические характеристики</h4>
-        <div class="two fields">
-            <div class="field">
-                <label>Емкость батареи</label>
-                <input type="text" name="battery" placeholder="Емкость батареи" th:field="*{battery}">
-            </div>
-            <div class="field">
-                <label>Запас хода</label>
-                <input type="text" name="range" placeholder="Запас хода" th:field="*{range}">
+                <label>Acceleration time to 100 km/h</label>
+                <input type="text" name="acceleration" placeholder="Acceleration time to 100 km/h" th:field="*{acceleration}">
             </div>
         </div>
 
-        <h4 class="ui dividing header">Прочие параметры</h4>
+        <h4 class="ui dividing header">Electrical specifications</h4>
         <div class="two fields">
             <div class="field">
-                <label>Тюнинг</label>
+                <label>Battery capacity</label>
+                <input type="text" name="battery" placeholder="Battery capacity" th:field="*{battery}">
+            </div>
+            <div class="field">
+                <label>Range</label>
+                <input type="text" name="range" placeholder="Range" th:field="*{range}">
+            </div>
+        </div>
+
+        <h4 class="ui dividing header">Other parameters</h4>
+        <div class="two fields">
+            <div class="field">
+                <label>Tuning</label>
                 <select class="ui search dropdown" id="tuning" th:field="*{tuner}">
                     <option value="0"></option>
                     <option th:each="tuner : ${tuners}"
@@ -232,7 +232,7 @@
                 </select>
             </div>
             <div class="field">
-                <label>Серия</label>
+                <label>Series</label>
                 <select class="ui search dropdown" id="series" th:field="*{series}">
                     <option value="0"></option>
                     <option th:each="series : ${series}"
@@ -247,37 +247,37 @@
                 <div class="five wide field">
                     <div class="ui slider checkbox">
                         <input type="checkbox" name="electric" th:checked="${modification.electric}">
-                        <label>Электромобиль</label>
+                        <label>Electric car</label>
                     </div>
                 </div>
                 <div class="five wide field">
                     <div class="ui slider checkbox">
                         <input type="checkbox" name="hybrid" th:checked="${modification.hybrid}">
-                        <label>Гибрид</label>
+                        <label>Hybrid</label>
                     </div>
                 </div>
                 <div class="five wide field">
                     <div class="ui slider checkbox">
                         <input type="checkbox" name="uniq" th:checked="${modification.uniq}">
-                        <label>Уникальность</label>
+                        <label>Unique</label>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h4 class="ui dividing header">Фотографии</h4>
+        <h4 class="ui dividing header">Photos</h4>
         <div class="two fields">
             <div class="field">
-                <label>Заглавное фото</label>
+                <label>Title photo</label>
                 <input type="file" name="file1">
             </div>
             <div class="field">
-                <label>Остальные фото</label>
+                <label>Other photos</label>
                 <input type="file" name="files" multiple>
             </div>
         </div>
 
-        <button class="ui button" type="submit">Сохранить</button>
+        <button class="ui button" type="submit">Save</button>
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>
 

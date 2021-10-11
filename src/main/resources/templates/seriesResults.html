@@ -5,13 +5,13 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/autosport">Автоспорт</a>
+    <a class="section" href="/autosport">Autosport</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/autosport/{name}(name=${series.name})}" th:text="${series.name}"></a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Результаты</div>
+    <div class="active section">Results</div>
 </div>
 
 <div class="ui segment">
@@ -21,9 +21,9 @@
                 <div class="item">
                     <div class="header" th:text="${series.getName()}"></div>
                     <div class="menu">
-                        <a class="item" th:href="@{/autosport/{name}/calendar(name=${series.name})}">Календарь</a>
-                        <a class="item active" th:href="@{/autosport/{name}/results(name=${series.name})}">Результаты</a>
-                        <a class="item" th:href="@{/autosport/{name}/archive(name=${series.name})}">Архив</a>
+                        <a class="item" th:href="@{/autosport/{name}/calendar(name=${series.name})}">Calendar</a>
+                        <a class="item active" th:href="@{/autosport/{name}/results(name=${series.name})}">Results</a>
+                        <a class="item" th:href="@{/autosport/{name}/archive(name=${series.name})}">Archive</a>
                     </div>
                 </div>
             </div>
@@ -56,16 +56,16 @@
             <table class="ui striped table">
                 <thead>
                 <tr>
-                    <th>Позиция</th>
-                    <th>Пилот</th>
-                    <th>Штурман</th>
-                    <th>Машина</th>
-                    <th>Класс</th>
-                    <th>Время</th>
-                    <th>Отставание</th>
-                    <th>Сход</th>
-                    <th>Очки</th>
-                    <th>Бонус</th>
+                    <th>Position</th>
+                    <th>Pilot</th>
+                    <th>Navigator</th>
+                    <th>Car</th>
+                    <th>Class</th>
+                    <th>Time</th>
+                    <th>Gap</th>
+                    <th>Out</th>
+                    <th>Points</th>
+                    <th>Bonus</th>
                 </tr>
                 </thead>
                 <tbody>

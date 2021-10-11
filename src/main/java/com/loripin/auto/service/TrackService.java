@@ -1,5 +1,6 @@
 package com.loripin.auto.service;
 
+import com.loripin.auto.model.Country;
 import com.loripin.auto.model.Track;
 import com.loripin.auto.repos.TrackRepo;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,12 @@ public class TrackService {
 
     public List<Track> findAllByOrderByName() {
         return trackRepo.findAllByOrderByName();
+    }
+
+    public Track findById(Long id) {
+        return trackRepo.getOne(id);
+    }
+    public void deleteById(Long id) {
+        trackRepo.deleteById(id);
     }
 }

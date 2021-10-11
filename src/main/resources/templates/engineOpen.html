@@ -5,11 +5,11 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список двигателей</div>
+    <div class="active section">Engine list</div>
 </div>
 
 <div class="ui container" style="margin-top:10px; margin-bottom: 10px">
@@ -18,7 +18,7 @@
         <form th:action="@{/engineUpdate/{id}(id=${engine.id})}" sec:authorize="hasAuthority('ADMIN')">
             <button class="ui basic button">
                 <i class="plus icon"></i>
-                Редактировать двигатель
+                Edit engine
             </button>
         </form>
 
@@ -34,23 +34,23 @@ ${engine.manufacturer.name} + ' ' + ${engine.name}">
                 <table class="ui small selectable very basic celled table">
                     <tbody>
                     <tr>
-                        <td>Тип двигателя</td>
+                        <td>Type</td>
                         <td th:if="${engine.engineType}" th:text="${engine.engineType.name}"></td>
                     </tr>
                     <tr>
-                        <td>Объем (л)</td>
+                        <td>Volume (l)</td>
                         <td th:text="${engine.volume}"></td>
                     </tr>
                     <tr>
-                        <td>Мощность (л.с.)</td>
+                        <td>Power (hp)</td>
                         <td th:text="${engine.power}"></td>
                     </tr>
                     <tr>
-                        <td>Крутящий момент (Нм)</td>
+                        <td>Torque (N⋅m)</td>
                         <td th:text="${engine.torque}"></td>
                     </tr>
                     <tr>
-                        <td>Топливо</td>
+                        <td>Fuel</td>
                         <td th:if="${engine.fuel}" th:text="${engine.fuel.name}"></td>
                     </tr>
                     </tbody>
@@ -60,7 +60,7 @@ ${engine.manufacturer.name} + ' ' + ${engine.name}">
 
 
         <h3 class="ui dividing header">
-            Автомобили с этим двигателем
+            Cars with this engine
         </h3>
         <div class="ui divided items">
             <div class="item" th:each="modification: ${modifications}">

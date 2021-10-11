@@ -6,27 +6,27 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список КПП</div>
+    <div class="active section">Transmission list</div>
 </div>
 
 <div class="ui segment">
     <form action="/gearBoxCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить КПП
+            Add transmission
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Название</th>
-            <th>Тип</th>
-            <th>Описание</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
         </tr>
         </thead>
         <tbody th:each="gearBox: ${gearBoxes}">

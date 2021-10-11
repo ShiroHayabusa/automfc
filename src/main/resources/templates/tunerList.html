@@ -6,28 +6,27 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список тюнеров</div>
+    <div class="active section">Tuner list</div>
 </div>
 
 <div class="ui segment">
     <form action="/tunerCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить тюнера
+            Add tuner
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Название</th>
-            <th>Тип</th>
-            <th>Описание</th>
-            <th>Логотип</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Logo</th>
         </tr>
         </thead>
         <tbody th:each="tuner: ${tuners}">
@@ -38,7 +37,6 @@
                 </a>
             </td>
             <td th:text="${tuner.country.name}"></td>
-            <td th:text="${tuner.description}"></td>
             <td>
                 <img class="ui small image" th:src="@{'/img/' + ${tuner.logo}}" alt="">
             </td>

@@ -8,23 +8,23 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/driveList">Список приводов</a>
+    <a class="section" href="/driveList">Drive list</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Добавить привод</div>
+    <div class="active section">Add drive</div>
 </div>
 
 <div class="ui raised very padded text container segment">
     <form class="ui form" action="#" th:action="@{/driveCreate}" th:object="${drive}"
           method="post" enctype="multipart/form-data">
         <div class="field">
-            <label>Привод</label>
-            <input type="text" name="name" placeholder="Титул" th:field="*{name}">
+            <label>Drive</label>
+            <input type="text" name="name" placeholder="Drive" th:field="*{name}">
         </div>
-        <button class="ui button" type="submit">Добавить</button>
+        <button class="ui button" type="submit">Add</button>
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     </form>
 </div>

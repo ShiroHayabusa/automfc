@@ -14,9 +14,9 @@
 </style>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <a class="section" href="/catalog">Каталог</a>
+  <a class="section" href="/catalog">Catalog</a>
   <i class="right angle icon divider"></i>
   <a class="section" th:href="@{/catalog/manufacturer/{id}(id=${carmodel.manufacturer.id})}"
                               th:text="${carmodel.manufacturer.name}"></a>
@@ -29,10 +29,10 @@
 <form style="margin-left: 20px" th:action="@{/uniqUpdate/{id}(id=${carmodel.id})}" sec:authorize ="hasAuthority('ADMIN')">
   <button class="ui basic button">
     <i class="edit icon"></i>
-    Редактировать
+    Edit
   </button>
 </form>
-<a style="margin-left: 20px" th:href="@{/catalog/manufacturer/carmodel/uniq/delete/{id}(id=${carmodel.id})}">Удалить</a>
+<a style="margin-left: 20px" th:href="@{/catalog/manufacturer/carmodel/uniq/delete/{id}(id=${carmodel.id})}">Delete</a>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
 
 
@@ -44,29 +44,29 @@
       <p th:text="${carmodel.description}"></p>
       <div class="ui divider"></div>
       <h4 class="ui header">
-        Годы выпуска
+        Production
         <div class="sub header" th:text="${carmodel.years}"></div>
       </h4>
       <div class="ui divider"></div>
       <div class="ui divider"></div>
       <h4 class="ui header">
-        Двигатели
+        Engines
         <div class="sub header" th:if="${carmodel.engine}" th:text="${carmodel.engine.name}"></div>
       </h4>
       <div class="ui divider"></div>
       <h4 class="ui header">
-        Привод
+        Drive
         <div class="sub header" th:if="${carmodel.drive}" th:text="${carmodel.drive.name}"></div>
       </h4>
 
       <div class="ui divider"></div>
       <!--        <h4 class="ui header">
-                Титулы
+                Titles
                 <div class="sub header">-</div>
               </h4>
               <div class="ui divider"></div>
               <h4 class="ui header">
-                Теги
+                Tags
                 <div class="sub header">
                   <a class="ui tag label"></a>
                   <a class="ui tag label"></a>
@@ -114,13 +114,13 @@
         <div class="three wide column">
           <div class="ui vertical fluid right tabular menu">
             <a class="item active" data-tab="photo">
-              Фото
+              Photo
             </a>
             <a class="item" data-tab="video">
-              Видео
+              Video
             </a>
             <a class="item" data-tab="spots">
-              Споты
+              Spots
             </a>
           </div>
         </div>

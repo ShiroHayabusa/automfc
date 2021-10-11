@@ -1,6 +1,7 @@
 package com.loripin.auto.service;
 
 import com.loripin.auto.model.BodyTypeName;
+import com.loripin.auto.model.Country;
 import com.loripin.auto.repos.BodyTypeNameRepo;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,12 @@ public class BodyTypeNameService {
 
     public List<BodyTypeName> findAllByOrderByNameAsc() {
         return bodyTypeNameRepo.findAllByOrderByNameAsc();
+    }
+
+    public BodyTypeName findById(Long id) {
+        return bodyTypeNameRepo.getOne(id);
+    }
+    public void deleteById(Long id) {
+        bodyTypeNameRepo.deleteById(id);
     }
 }

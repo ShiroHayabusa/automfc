@@ -6,31 +6,31 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список двигателей</div>
+    <div class="active section">Engine list</div>
 </div>
 
 <div class="ui segment">
     <form action="/engineCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить двигатель
+            Add engine
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Название</th>
-            <th>Объем</th>
-            <th>Мощность</th>
-            <th>Тип двигателя</th>
-            <th>Крутящий момент</th>
-            <th>Топливо</th>
-            <th>Производитель</th>
+            <th>Name</th>
+            <th>Volume</th>
+            <th>Power</th>
+            <th>Type</th>
+            <th>Torque</th>
+            <th>Fuel</th>
+            <th>Brand</th>
             <th></th>
             <th></th>
         </tr>
@@ -46,10 +46,10 @@
             <td th:if="${engine.fuel}" th:text="${engine.fuel.name}"></td>
             <td th:text="${engine.manufacturer.name}"></td>
             <td>
-                <a th:href="@{/engineUpdate/{id}(id=${engine.id})}">Редактировать</a>
+                <a th:href="@{/engineUpdate/{id}(id=${engine.id})}">Edit</a>
             </td>
             <td>
-                <a th:href="@{/engineDelete/{id}(id=${engine.id})}">Удалить</a>
+                <a th:href="@{/engineDelete/{id}(id=${engine.id})}">Delete</a>
             </td>
         </tr>
         </tbody>

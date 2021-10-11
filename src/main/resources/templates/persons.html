@@ -5,19 +5,19 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <a class="section" href="/autosport">Автоспорт</a>
+  <a class="section" href="/autosport">Autosport</a>
   <i class="right angle icon divider"></i>
   <a class="section" th:href="@{/autosport/{id}(id=${series.id})}" th:text="${series.name}"></a>
   <i class="right angle icon divider"></i>
-  <div class="active section">Персоны</div>
+  <div class="active section">Persons</div>
 </div>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
 <form style="margin-left: 20px" action="/personCreate" sec:authorize ="hasAuthority('ADMIN')">
   <button class="ui basic button">
     <i class="plus icon"></i>
-    Добавить персону
+    Add person
   </button>
 </form>
 <div class="ui segment">
@@ -27,59 +27,59 @@
     </div>
     <div class="thirteen wide column">
       <h3 class="ui dividing header">
-        Персоны
+        Persons
       </h3>
       <div class="ui five column doubling stackable grid container">
         <div class="column">
           <div class="ui link list">
             <h3 class="ui dividing header">
-              А
+              A
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'А')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'A')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Б
+              B
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Б')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'B')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              В
+              C
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'В')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'C')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Г
+              D
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Г')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'D')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Д
+              E
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Д')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'E')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
             <h3 class="ui dividing header">
-              Е
+              F
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Е')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'F')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
@@ -92,36 +92,36 @@
 
 
             <h3 class="ui dividing header">
-              Ж
+              G
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Ж')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'G')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              З
+              H
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'З')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'H')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              И
+              I
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'И')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'I')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Й
+              J
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Й')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'J')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
@@ -129,16 +129,16 @@
             <h3 class="ui dividing header">
               K
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'К')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'K')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Л
+              L
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Л')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'L')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
@@ -151,53 +151,53 @@
 
 
             <h3 class="ui dividing header">
-              М
+              M
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'М')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'M')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Н
+              N
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Н')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'N')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              О
+              O
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'О')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'O')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
             <h3 class="ui dividing header">
-              П
+              P
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'П')}">
-              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
-                <span th:text="${person.name}"></span>
-              </a>
-            </div>
-
-            <h3 class="ui dividing header">
-              Р
-            </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Р')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'P')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              С
+              Q
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'С')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Q')}">
+              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
+                <span th:text="${person.name}"></span>
+              </a>
+            </div>
+
+            <h3 class="ui dividing header">
+              R
+            </h3>
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'R')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
@@ -210,52 +210,52 @@
 
 
             <h3 class="ui dividing header">
-              Т
+              S
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Т')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'S')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
             <h3 class="ui dividing header">
-              У
+              T
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'У')}">
-              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
-                <span th:text="${person.name}"></span>
-              </a>
-            </div>
-
-            <h3 class="ui dividing header">
-              Ф
-            </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Ф')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'T')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Х
+              U
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Х')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'U')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Ц
+              V
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Ц')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'V')}">
+              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
+                <span th:text="${person.name}"></span>
+              </a>
+            </div>
+
+            <h3 class="ui dividing header">
+              W
+            </h3>
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'W')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
             <h3 class="ui dividing header">
-              Ч
+              X
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Ч')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'X')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
@@ -268,49 +268,23 @@
 
 
             <h3 class="ui dividing header">
-              Ш
+              Y
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Ш')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Y')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
             <h3 class="ui dividing header">
-              Щ
+              Z
             </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Щ')}">
+            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Z')}">
               <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
                 <span th:text="${person.name}"></span>
               </a>
             </div>
 
-            <h3 class="ui dividing header">
-              Э
-            </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Э')}">
-              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
-                <span th:text="${person.name}"></span>
-              </a>
-            </div>
-
-            <h3 class="ui dividing header">
-              Ю
-            </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Ю')}">
-              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
-                <span th:text="${person.name}"></span>
-              </a>
-            </div>
-
-            <h3 class="ui dividing header">
-              Я
-            </h3>
-            <div th:each="person: ${persons}" th:if="${#strings.startsWith(person.name,'Я')}">
-              <a class="item" th:href="@{/personOpen/{id}(id=${person.id})}">
-                <span th:text="${person.name}"></span>
-              </a>
-            </div>
           </div>
         </div>
       </div>

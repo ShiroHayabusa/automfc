@@ -5,18 +5,18 @@
 <div th:insert="parts/_menu :: menu"></div>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-  <a class="section" href="/">Главная</a>
+  <a class="section" href="/">Home</a>
   <i class="right angle icon divider"></i>
-  <div class="active section" href="/catalog">Каталог</div>
+  <div class="active section" href="/catalog">Catalog</div>
 </div>
 
 <h3 style="margin-left:20px; margin-right:20px" class="ui dividing header">
-  Каталог
+  Catalog
 </h3>
 <form style="margin-left: 20px" action="/manufacturerCreate" sec:authorize ="hasAuthority('ADMIN')">
   <button class="ui basic button">
     <i class="plus icon"></i>
-    Добавить марку
+    Add brand
   </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>

@@ -6,25 +6,25 @@
 <div th:insert="parts/_menu :: menu"></div>
 <body>
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список спецификаций</div>
+    <div class="active section">Market list</div>
 </div>
 
 <div class="ui segment">
     <form action="/specCreate">
         <button class="ui basic button">
             <i class="plus icon"></i>
-            Добавить спецификацию
+            Add market
         </button>
     </form>
     <table class="ui striped table">
         <thead>
         <tr>
             <th>id</th>
-            <th>Название</th>
+            <th>Name</th>
             <th></th>
             <th></th>
         </tr>
@@ -35,7 +35,7 @@
             <td th:text="${spec.name}"></td>
             <td th:if="${spec.country}" th:text="${spec.country.name}"></td>
             <td>
-                <a th:href="@{/specUpdate/{id}(id=${spec.id})}">Редактировать</a>
+                <a th:href="@{/specUpdate/{id}(id=${spec.id})}">Edit</a>
             </td>
         </tr>
         </tbody>

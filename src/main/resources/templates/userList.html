@@ -7,20 +7,20 @@
 <body>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/adminPage">Администрирование</a>
+    <a class="section" href="/adminPage">Administration</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Список пользователей</div>
+    <div class="active section">User list</div>
 </div>
 
 <div class="ui raised very padded text container segment">
-<h2>Список пользователей</h2>
+<h2>User list</h2>
 <table class="ui very basic table">
     <thead>
     <tr>
-        <th>Имя</th>
-        <th>Роль</th>
+        <th>Name</th>
+        <th>Role</th>
         <th></th>
     </tr>
     </thead>
@@ -28,7 +28,7 @@
         <tr th:each="u: ${users}">
             <td th:text="${u.username}"></td>
             <td th:text="${u.roles}"></td>
-            <td><a th:href="@{user/{id}(id=${u.id})}">Редактировать</a></td>
+            <td><a th:href="@{user/{id}(id=${u.id})}">Edit</a></td>
         </tr>
     </tbody>
 </table>

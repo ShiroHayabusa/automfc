@@ -14,9 +14,9 @@
 </style>
 
 <div style="margin-left:20px" class="ui mini breadcrumb">
-    <a class="section" href="/">Главная</a>
+    <a class="section" href="/">Home</a>
     <i class="right angle icon divider"></i>
-    <a class="section" href="/catalog">Каталог</a>
+    <a class="section" href="/catalog">Catalog</a>
     <i class="right angle icon divider"></i>
     <a class="section" th:href="@{/catalog/manufacturer/{id}(id =${bodyType.generation.manufacturer.id})}"
        th:text="${bodyType.generation.manufacturer.name}"></a>
@@ -48,7 +48,7 @@
       sec:authorize ="hasAuthority('ADMIN')">
     <button class="ui basic button">
         <i class="edit icon"></i>
-        Редактировать
+        Edit
     </button>
 </form>
 <p style="margin-left:20px; margin-right:20px" th:text="${bodyType.description}"></p>
@@ -56,7 +56,7 @@
 <form style="margin-left: 20px" action="/modificationCreate" sec:authorize ="hasAuthority('ADMIN')">
     <button class="ui basic button">
         <i class="plus icon"></i>
-        Добавить модификацию
+        Add car
     </button>
 </form>
 <div style="margin-left: 20px; margin-right: 20px" class="ui divider" sec:authorize ="hasAuthority('ADMIN')"></div>
@@ -85,7 +85,7 @@
                     <div class="ui label" th:if="${modification.spec}" th:text="${modification.spec.name}"></div>
                 </div>
                 <div class="description" sec:authorize ="hasAuthority('ADMIN')">
-                    <a th:href="@{/restyles/car/modification/delete/{id}(id=${modification.id})}">Удалить</a>
+                    <a th:href="@{/restyles/car/modification/delete/{id}(id=${modification.id})}">Delete</a>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@
 
 <div style="margin-left:20px; margin-right:20px" class="ui segment" th:if="${counter > 0}">
     <h3 class="ui dividing header">
-        Тюнинг
+        Tuning
     </h3>
     <div class="ui divided items">
         <div class="item" th:each="modification: ${modifications}" th:if="${modification.tuner}">

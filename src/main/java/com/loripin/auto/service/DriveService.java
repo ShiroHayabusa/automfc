@@ -1,5 +1,6 @@
 package com.loripin.auto.service;
 
+import com.loripin.auto.model.Country;
 import com.loripin.auto.model.Drive;
 import com.loripin.auto.repos.DriveRepo;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,12 @@ public class DriveService {
 
     public Drive save(Drive drive) {
         return driveRepo.save(drive);
+    }
+
+    public Drive findById(Integer id) {
+        return driveRepo.getOne(id);
+    }
+    public void deleteById(Integer id) {
+        driveRepo.deleteById(id);
     }
 }
